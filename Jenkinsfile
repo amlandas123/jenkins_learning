@@ -27,10 +27,18 @@ pipeline{
             }
         }
             
-            parallel {
+        parallel {
+            stage('Branch A'){
                 steps{
-                    sh "echo Demo on parallel jobs"
+                    sh "echo branch A on parallel task"    
+                }
             }
+            stage('Branch B'){
+                steps{
+                    sh "echo branch B on parallel task"
+                }
+            }
+
         }
         
         stage ("Welcome All"){
