@@ -1,7 +1,7 @@
 pipeline{
     agent any
      tools {
-        maven 'apache-maven-3.0.1' 
+        maven'apache-maven-3.0.1' 
     }
     environment{
         env_url = "www.google.com"
