@@ -10,7 +10,7 @@ pipeline{
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    options { buildDiscarder(logRotator(numToKeepStr: '2')) }
+    options { buildDiscarder(logRotator(numToKeepStr: '10')) }
     triggers { pollSCM('*/1 * * * *') }
     stages {
         stage ("Print Hello"){
