@@ -26,6 +26,13 @@ pipeline{
 
             }
         }
+        stage ("Demo on Parallel Stage"){
+            parallel{
+                steps{
+                    sh "echo Demo on parallel jobs"
+                }
+            }
+        }
         stage ("Welcome All"){
             environment{
                 env_url = "www.yahoo.com"
