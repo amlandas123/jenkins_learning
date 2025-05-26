@@ -27,7 +27,7 @@ pipeline{
             }
         }
         stage ("Demo on Parallel Stage"){
-            parallel{
+            parallel {
                 steps{
                     sh "echo Demo on parallel jobs"
                 }
