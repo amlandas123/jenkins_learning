@@ -1,7 +1,7 @@
 pipeline{
     agent any
      tools {
-        maven'apache-maven-3.0.1' 
+        maven 'maven-399' 
     }
     environment{
         env_url = "www.google.com"
@@ -22,7 +22,7 @@ pipeline{
             steps{
                 sh "echo Hello world"
                 sh "echo name of the site is ${env_url}"
-                sh "mvn"
+                sh "mvn --version"
 
             }
         }
