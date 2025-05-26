@@ -10,13 +10,16 @@ pipeline{
         choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    options { buildDiscarder(logRotator(numToKeepStr: '10')) }
+    options { buildDiscarder(logRotator(numToKeepStr: '10')) 
+              timeout(time: 1, unit: 'MINUTES')
+            }
     triggers { pollSCM('*/1 * * * *') }
     stages {
         stage ("Print Hello"){
             steps{
                 sh "echo Hello world"
                 sh "echo name of the site is ${env_url}"
+                sh "sleep 120"
 
             }
         }
