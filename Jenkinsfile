@@ -22,6 +22,7 @@ pipeline{
     stages {
         stage ("Print Hello"){
             steps{
+                sh "echo hostname"
                 sh "echo Hello world"
                 sh "echo name of the site is ${env_url}"
                 sh "mvn --version"
