@@ -1,7 +1,9 @@
 pipeline{
-    agent any
+    agent {
+        label 'ws'
+    }
      tools {
-        maven 'maven-399' 
+        maven 'maven-399'
     }
     environment{
         env_url = "www.google.com"
